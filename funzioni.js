@@ -2,13 +2,13 @@
 
 // DICHIARAZIONE DELLA FUNZIONE
 
-function salutaMondo() {
+/* function salutaMondo() {
   console.log("Ciao")
   console.log("Mondo")
   console.log("Il mio nome è: ")
   console.log("Riccardo")
 }
-
+ */
 // UTILIZZO
 // salutaMondo()
 /* 
@@ -24,7 +24,7 @@ salutaMondo() */
 
 // PARAMETRI DELLA FUNZIONE
 
-function salutaQualcuno(qualcuno) {
+/* function salutaQualcuno(qualcuno) {
   console.log("Ciao", qualcuno)
   console.log("Il mio nome è: ")
   console.log("Riccardo")
@@ -70,7 +70,7 @@ for (let index = 0; index < arrayDiNumeri.length; index++) {
   cubo(element)
 }
 
-arrayDiNumeri.push(11)
+arrayDiNumeri.push(11) */
 
 /* // FUNZIONI CON PIU' DI UN PARAMETRO
 
@@ -82,7 +82,7 @@ somma(10, 30)
 somma(100, 30000)
  */
 
-function quadratoECubo(x) {
+/* function quadratoECubo(x) {
   if (typeof x !== "number") {
     console.log("Per favore passami un numero")
   } else {
@@ -94,7 +94,7 @@ function quadratoECubo(x) {
 
 quadratoECubo(123)
 quadratoECubo(-456)
-quadratoECubo([])
+quadratoECubo([]) */
 
 /* function sommaNumeriDiArray(array){
     for (let index = 0; index < array.length; index++) {
@@ -103,9 +103,84 @@ quadratoECubo([])
     }
 } */
 
-function abbaiaUnCertoNumeroDiVolte(numeroDiVolte) {
+/* function abbaiaUnCertoNumeroDiVolte(numeroDiVolte) {
   for (let index = 0; index < numeroDiVolte; index++) {
     console.log("BAU")
   }
 }
+
 abbaiaUnCertoNumeroDiVolte(123)
+ */
+
+// RETURN
+
+/* function somma(x, y) {
+  const risultato = x + y
+  return risultato
+}
+
+const sommaDuePiuDue = somma(2, 2) // Se la funzione ha un valore di ritorno (return), posso memorizzare quel valore in una variabile
+
+console.log(sommaDuePiuDue)
+
+function quadrato(x) {
+  return x * x
+}
+
+function cubo(x) {
+  return x * x * x
+}
+
+const dodiciPerDodici = quadrato(12) // dodiciPerDodici = 144
+
+console.log(dodiciPerDodici)
+
+function quadratoECubo(x) {
+  if (typeof x !== "number") {
+    console.log("Per favore passami un numero")
+  } else {
+    console.log("Il numero passato è:", x)
+    const q = quadrato(x) // q = 15129
+    const c = cubo(x) // c = 1860867
+    return { risultato1: q, risultato2: c }
+    // return [q, c]
+  }
+}
+
+const qEC = quadratoECubo(123)
+
+console.log(qEC.risultato1)
+console.log(qEC.risultato2)
+ */
+
+function somma1(x, y) {
+  const risultato = x + y
+  return risultato
+}
+
+const somma2 = function (x, y) {
+  const risultato = x + y // risultato ha visibilità (scope) LOCALE --> è definita solo all'interno della funzione
+  return risultato
+}
+
+const r = somma2(2, 3)
+
+console.log(r)
+
+//console.log(risultato) // risultato is not defined (perché è definita solo all'interno della funzione)
+
+// ARROW FUNCTION =>
+
+const somma3 = (x, y) => x + y
+const somma4 = (x, y) => {
+  return x + y
+}
+
+console.log(somma3(2, 3))
+
+// RANDOM
+
+const randomConDecimali = Math.random() * 100
+const randomIntero = Math.floor(randomConDecimali)
+
+console.log(randomIntero)
